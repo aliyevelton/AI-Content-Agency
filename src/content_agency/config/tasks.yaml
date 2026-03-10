@@ -1,0 +1,23 @@
+# CrewAI Masterclass: Content Agency — Tasks (Part 5)
+# expected_output is the finish line. Without it: agents loop, outputs drift, costs explode.
+
+research_task:
+  description: >
+    Research {topic} thoroughly. Focus on emerging trends, recent developments,
+    and the most relevant information for {current_year}.
+    Use your tools to find live, up-to-date sources.
+  expected_output: >
+    A list of exactly 10 bullet points. Each bullet is one key finding about {topic}.
+    Clear, factual, and sourced. No filler. This becomes the outline for the report.
+  agent: researcher
+
+reporting_task:
+  description: >
+    Using the research provided, write a full report on {topic}.
+    Expand each research point into a full section. Keep a clear narrative arc.
+    Write for a technical audience that wants depth and clarity.
+  expected_output: >
+    A single markdown report. Structure: title, intro, one section per research point
+    (with headings), then conclusion. No code fences (no ```). Length: substantial
+    but focused—each section 2–4 paragraphs. This is the final deliverable.
+  agent: writer
